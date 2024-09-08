@@ -1,0 +1,48 @@
+.goodsListContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 450px;
+    grid-auto-rows: 450px;
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.item {
+    border: 0px black solid;
+}
+
+.divPicture {
+    padding-top: 10px;
+    padding-left: 10px;
+       
+}
+
+.Picture {
+    width: 200px;
+    display: block;
+    max-width: 100%;
+    max-height: 350px;  
+}
+
+.divname {
+    width: 200px; 
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.buy {
+    display: grid;
+    grid-template-columns: 170px 30px;
+    grid-template-rows: 40px; 
+}
+
+.price {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.GoodPage {
+    display: grid;
+    grid-template-columns: 300px 1fr; 
+}

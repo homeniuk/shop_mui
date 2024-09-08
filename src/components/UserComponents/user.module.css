@@ -1,0 +1,14 @@
+
+.centerPosition{
+    margin-top: 25px;
+}
+
+.loginContainer{
+    margin-top: 25px;
+    margin-left: 25px;
+    max-width: 400px;
+}
+
+.redText{
+    color: red;
+}
