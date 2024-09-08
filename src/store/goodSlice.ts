@@ -2,12 +2,25 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { GoodAPI } from '../api/api';
 import { TypeGoodsState, TypeGoodsListReturn, TypeGoodsListEnter, TypeOfSingleGood, TypeOfSingleGoodEnter, TypeSingleGoodReturn } from '../types/typesGoods'
 
+const defSingleGood:TypeSingleGoodReturn = {
+    message:    '',
+    id:         0,
+    name:       '',
+    description:'',
+    image:      '',
+    price:      0,
+    rating:     0,
+    catalog:    '',
+}
+
 const initialState: TypeGoodsState = {
     goodsList:      [],
-    singleGood:     [],
+    singleGood:     defSingleGood,
     isGoodsLoading: false,
     errorOnGoods:   ''
 }
+
+
 
 const goodSlice = createSlice({
     name: 'good',
@@ -50,7 +63,7 @@ const goodSlice = createSlice({
             if (action.payload.message)
                 state.errorOnGoods = action.payload.message
             else {
-                state.singleGood = [action.payload];
+                state.singleGood = action.payload;
             }             
         })
         .addCase(downloadGoodInfo.rejected, (state, action)=> {

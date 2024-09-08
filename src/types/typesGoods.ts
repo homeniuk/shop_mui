@@ -5,7 +5,7 @@ export type TypePropsGoodsList = {
 
 export interface TypeGoodsState {
     goodsList:      TypeOfMassivGoods[],
-    singleGood:     TypeOfSingleGood[], 
+    singleGood:     TypeOfSingleGood, 
     isGoodsLoading: boolean,
     errorOnGoods:   string|null,
 }
@@ -15,6 +15,7 @@ export interface TypeOfMassivGoods {
     name:       string,
     image:      string,
     price:      number,
+    rating:     number,
 }
 
 export interface TypeOfSingleGood {
@@ -23,6 +24,7 @@ export interface TypeOfSingleGood {
     description:string,
     image:      string,
     price:      number,
+    rating:     number,
     catalog:    string,
 }
 
@@ -37,6 +39,7 @@ export interface TypeSingleGoodReturn{
     description:string,
     image:      string,
     price:      number,
+    rating:     number,
     catalog:    string,
 }
 
@@ -50,6 +53,7 @@ export interface TypePropsGoodElement {
     name:       string,
     image:      string,
     price:      number, 
+    rating:     number,
     inBasket:   boolean,
     isAdding:   boolean,
     token:      string,
@@ -71,6 +75,7 @@ export interface TypeOfMassivToDisplay {
     name:       string,
     image:      string,
     price:      number,
+    rating:     number,
     inBasket:   boolean,
     isAdding:   boolean,
 }

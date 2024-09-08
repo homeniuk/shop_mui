@@ -45,6 +45,7 @@ const GoodsList: React.FC<TypePropsGoodsList> = (props) => {
                 name    = {i.name} 
                 image   = {i.image}
                 price   = {i.price}
+                rating  = {i.rating}
                 inBasket= {i.inBasket} 
                 isAdding= {i.isAdding}
                 section = {section}

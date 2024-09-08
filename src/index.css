@@ -22,7 +22,7 @@ code {
 }
 .header  { grid-area: header;  background-color: aquamarine;}
 .menu    { grid-area: menu;    background-color: rgb(227, 231, 229);}
-.content { grid-area: content; min-height: 450px;}
+.content { grid-area: content; min-height: 900px;}
 .footer  { grid-area: footer;  background-color: aquamarine }
 
 .siteName {

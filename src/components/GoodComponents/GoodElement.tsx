@@ -4,10 +4,11 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { TypePropsGoodElement } from '../../types/typesGoods';
 import { Link } from 'react-router-dom';
 import BuyIcon from './BuyIcon';
+import { Rating } from '@mui/material';
 
 
 const GoodElement: React.FC<TypePropsGoodElement> = (props) => {
-    const { id, name, image, price, inBasket, isAdding, token } = props;
+    const { id, name, image, price, rating, inBasket, isAdding, token } = props;
     const dispatch = useAppDispatch();
 
     const _link = '' + id;
@@ -22,6 +23,7 @@ const GoodElement: React.FC<TypePropsGoodElement> = (props) => {
             <div className={styles.divname}>
                 <Link to={_link}> {name} </Link>
             </div>
+            <Rating defaultValue={rating} precision={0.5} readOnly />
             <div className={styles.buy}>
                 <div className={styles.price}>Price: {price} UAH</div>
                 <BuyIcon id={id} token={token} isAdding={isAdding} inBasket={inBasket}/>

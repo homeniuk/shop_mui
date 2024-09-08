@@ -5,7 +5,7 @@ import { downloadGoodInfo } from '../../store/goodSlice';
 import {useParams } from "react-router-dom";
 import Loader from '../Loader';
 import BuyIcon from './BuyIcon';
-import { toNumber } from 'lodash';
+import { Rating } from '@mui/material';
 
 
 const GoodSinglePage: React.FC = () => {
@@ -25,7 +25,7 @@ const GoodSinglePage: React.FC = () => {
 
     if (isLoading)
         return <Loader />;
-    if (!isLoading && GoodInfo.length === 0)
+    if (!isLoading && GoodInfo.id === 0)
         return <div>The good wasn't found</div>;
     
     let inBasket = false;
@@ -38,13 +38,16 @@ const GoodSinglePage: React.FC = () => {
     return (
        <div className={styles.GoodPage} >
             <div className={styles.divPicture}>
-                <img src={GoodInfo[0].image} alt='' className={styles.Picture}/>
+                <img src={GoodInfo.image} alt='' className={styles.Picture}/>
             </div>
             <div>
-                <h2>{GoodInfo[0].name}</h2>
-                <div>{GoodInfo[0].description}</div>
-                <h2>Цена: {GoodInfo[0].price}</h2>
+                <h2>{GoodInfo.name}</h2>
+                <div>{GoodInfo.description}</div>
+                
+                <h2>Цена: {GoodInfo.price}</h2>
+                <div><Rating defaultValue={GoodInfo.rating} precision={0.5} readOnly /></div>
                 <BuyIcon id = {_id} token = {token} inBasket = {inBasket} isAdding = {isAdding}/>
+                
             </div>
         </div>
     )
