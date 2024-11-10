@@ -3,7 +3,7 @@ import { TypeBasketListReturn } from "../types/typesBasket";
 import { TypeGoodsListReturn, TypeSingleGoodReturn } from "../types/typesGoods";
 import { TypeLoginReturn, TypeRegisterReturn } from "../types/typesUser";
 
-const baseUrl = "http://localhost:5000/";
+const baseUrl = "http://195.191.25.72:5003/";
 
 const getConfig = (token:string) => {
     return {
